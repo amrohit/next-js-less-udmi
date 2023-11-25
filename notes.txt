@@ -1,0 +1,8 @@
+- in Page Router, Next JS renders component first on Server and then client. That means on both.
+ This is because let say there are few functionality which you want to perform on client side. eg showing modal as soon as page is rendered. but you can not do this on server. so NextJS re-renders this component on both.
+ * in this case, NextJS first renders the component on Server then it also sends same component code or the javascript code in a javascript bundle on the browser so it can run the modal functionality. 
+ * limitation of old page Router is that it always sends to the browser all the code for the component.
+
+- in App Router, By Defaut the component gets rendered on Server. so all the component are server component by default.
+ * it only run the component on server without sending any code to the browser , that means zero bundle size. so lot more efficent.
+ * but what if we need some client side functionality? you can use the keyword use client to inform the Next Js that it is client side component and needs to render on Client side
